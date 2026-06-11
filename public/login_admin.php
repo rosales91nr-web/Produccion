@@ -227,7 +227,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             let particles = [], w, h, ctx;
             class P { constructor() { this.x=Math.random()*w; this.y=Math.random()*h; this.s=Math.random()*1.5+.5; this.vx=Math.random()*.6-.3; this.vy=Math.random()*.6-.3; } update() { this.x+=this.vx; this.y+=this.vy; if(this.x>w||this.x<0)this.vx*=-1; if(this.y>h||this.y<0)this.vy*=-1; } draw() { ctx.fillStyle='rgba(40,167,69,.3)'; ctx.beginPath(); ctx.arc(this.x,this.y,this.s,0,Math.PI*2); ctx.fill(); } }
             self.onmessage = e => {
-                if(e.data.type==='init'){ w=e.data.w; h=e.data.h; ctx=e.data.ctx; for(let i=0;i<60;i++)particles.push(new P()); animate(); }
+                if(e.data.type==='init'){ w=e.data.w; h=e.data.h; ctx=e.data.ctx.getContext('2d'); for(let i=0;i<60;i++)particles.push(new P()); animate(); }
                 if(e.data.type==='resize'){ w=e.data.w; h=e.data.h; }
             };
             function animate(){ ctx.clearRect(0,0,w,h); particles.forEach(p=>{p.update();p.draw()}); requestAnimationFrame(animate); }
@@ -235,14 +235,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         const blob = new Blob([workerCode], {type: 'application/javascript'});
         const worker = new Worker(URL.createObjectURL(blob));
         const canvas = document.getElementById('p');
-        const offscreen = canvas.transferControlToOffscreen();
         canvas.width = innerWidth;
         canvas.height = innerHeight;
+        const offscreen = canvas.transferControlToOffscreen();
         worker.postMessage({type:'init', w:innerWidth, h:innerHeight, ctx:offscreen}, [offscreen]);
         
         addEventListener('resize', () => { 
-            canvas.width = innerWidth; 
-            canvas.height = innerHeight; 
             worker.postMessage({type:'resize', w:innerWidth, h:innerHeight}); 
         });
 
