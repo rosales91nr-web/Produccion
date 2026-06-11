@@ -823,7 +823,7 @@ button:hover {
 </head>
 <body>
 
-<img src="/control_produccion/public/logo.png" alt="Logo" class="logo">
+<img src="/logo.svg" alt="Logo" class="logo">
 
 <div class="container">
     <h2>Resumen de Producción</h2>

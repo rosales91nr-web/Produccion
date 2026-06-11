@@ -1090,7 +1090,7 @@ if (isset($_GET['exportar'])) {
                 <div class="user-name">👋 Bienvenid@, <?= htmlspecialchars($_SESSION['empleado'], ENT_QUOTES, 'UTF-8') ?></div>
                 <a href="login_admin.php"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a>
             </div>
-            <img src="/control_produccion/public/logo.png" alt="Logo" class="logo">
+            <img src="/logo.svg" alt="Logo" class="logo">
         </div>
     </header>
 

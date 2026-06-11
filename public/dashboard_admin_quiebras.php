@@ -455,7 +455,7 @@ a:hover {
 
 <body>
 
-<img src="/control_produccion/public/logo.png" class="logo" alt="Logo">
+<img src="/logo.svg" class="logo" alt="Logo">
 
 <div class="container">
 

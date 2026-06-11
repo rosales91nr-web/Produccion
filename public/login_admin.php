@@ -163,7 +163,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     <div class="wrapper">
         <div class="brand">
-            <div class="logo"><img src="/control_produccion/public/logo.png" alt="SIA-LAB"></div>
+            <div class="logo"><img src="/logo.svg" alt="SIA-LAB"></div>
             <h1 class="title">SIA-LAB</h1>
             <p class="subtitle">Sistema Administrativo Para Laboratorio Optico</p>
             <ul class="features">

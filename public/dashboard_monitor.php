@@ -598,7 +598,7 @@ $fecha_fin = isset($_GET['fecha_fin']) ? $_GET['fecha_fin'] : date('Y-m-d');
 </head>
 <body>
 
-<img src="/control_produccion/public/logo.png" alt="Logo" class="logo" onerror="this.style.display='none'">
+<img src="/logo.svg" alt="Logo" class="logo" onerror="this.style.display='none'">
 
 <div class="topbar">
     <h1>📡 Monitor en Vivo</h1>

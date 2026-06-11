@@ -315,7 +315,7 @@ $conn->close();
 </head>
 
 <body>
-    <img src="/control_produccion/public/logo.png" alt="Logo" class="logo">
+    <img src="/logo.svg" alt="Logo" class="logo">
 
     <div class="content-wrapper">
         <h2>Dashboard de Empleados</h2>
