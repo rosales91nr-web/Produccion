@@ -64,6 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 'pruebas_calidad' => 'dashboard_admin_check.php',
                 'paros_equipos' => 'dashboard_admin_paros.php',
                 'asignar_tarea' => 'asignar_tarea.php',
+                'backups'       => 'dashboard_admin_backups.php',
             ];
             
             $modulo_destino = $routes[$area] ?? 'dashboard_monitor.php';
